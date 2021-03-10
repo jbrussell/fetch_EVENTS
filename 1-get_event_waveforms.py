@@ -4,6 +4,7 @@
 # 
 # ##### JBR - 2/3/18
 # ##### JBR - 2/7/18 : Include option to use GCMT parameters in SAC headers
+# ##### JBR - 3/10/21: Use IRIS SPUD to get GCMT parameters rather than the GCMT webpage
 # %% codecell
 %load_ext autoreload
 %autoreload
