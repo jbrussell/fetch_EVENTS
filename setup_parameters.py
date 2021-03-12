@@ -9,7 +9,7 @@ if input_stalist: # List of stations
     text_file = open(stalist, "r")
     stations = text_file.read().split('\n')
     text_file.close()
-    stations = ','.join(stations)
+    stations = ','.join(stations).replace(" ", "")
 else: # Use all available stations
     stations = "*"
     
