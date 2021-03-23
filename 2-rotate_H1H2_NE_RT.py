@@ -51,9 +51,9 @@ for iev, event in enumerate(evs['event']):
     
     for ista, sta in enumerate(stas):
         try:
-            st = read(evdir + event+'.*.'+sta+'.*.sac', debug_headers=True)
+            st = read(evdir + event+'.*.'+str(sta)+'.*.sac', debug_headers=True)
         except Exception:
-            print('Missing data for station: ',sta)
+            print('Missing data for station: ',str(sta))
             continue
         H1azi = ori.loc[sta]['H1azi']
         for itr in range(0,len(st)):
@@ -93,25 +93,25 @@ for iev, event in enumerate(evs['event']):
         st_bhr.data = r
 
         # Remove existing file
-        if os.path.exists(evdir + event+'.'+network+'.'+sta+'.'+Ncomp+'.sac'):
-            os.remove(evdir + event+'.'+network+'.'+sta+'.'+Ncomp+'.sac')
-        if os.path.exists(evdir + event+'.'+network+'.'+sta+'.'+Ecomp+'.sac'):
-            os.remove(evdir + event+'.'+network+'.'+sta+'.'+Ecomp+'.sac')
-        if os.path.exists(evdir + event+'.'+network+'.'+sta+'.'+Tcomp+'.sac'):
-            os.remove(evdir + event+'.'+network+'.'+sta+'.'+Tcomp+'.sac')
-        if os.path.exists(evdir + event+'.'+network+'.'+sta+'.'+Rcomp+'.sac'):
-            os.remove(evdir + event+'.'+network+'.'+sta+'.'+Rcomp+'.sac')
+        if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac'):
+            os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac')
+        if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Ecomp+'.sac'):
+            os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Ecomp+'.sac')
+        if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Tcomp+'.sac'):
+            os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Tcomp+'.sac')
+        if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Rcomp+'.sac'):
+            os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Rcomp+'.sac')
         
         network = st_bhr.stats.network
         # Save BHN, BHE, BHR, and BHT
         sac_n = SACTrace.from_obspy_trace(st_bhn)
-        sac_n.write(evdir + event+'.'+network+'.'+sta+'.'+Ncomp+'.sac')
+        sac_n.write(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac')
         sac_e = SACTrace.from_obspy_trace(st_bhe)
-        sac_e.write(evdir + event+'.'+network+'.'+sta+'.'+Ecomp+'.sac')
+        sac_e.write(evdir + event+'.'+network+'.'+str(sta)+'.'+Ecomp+'.sac')
         sac_t = SACTrace.from_obspy_trace(st_bht)
-        sac_t.write(evdir + event+'.'+network+'.'+sta+'.'+Tcomp+'.sac')
+        sac_t.write(evdir + event+'.'+network+'.'+str(sta)+'.'+Tcomp+'.sac')
         sac_r = SACTrace.from_obspy_trace(st_bhr)
-        sac_r.write(evdir + event+'.'+network+'.'+sta+'.'+Rcomp+'.sac')
+        sac_r.write(evdir + event+'.'+network+'.'+str(sta)+'.'+Rcomp+'.sac')
         
 #         fmin = 1/100
 #         fmax = 1/20
