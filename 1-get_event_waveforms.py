@@ -114,7 +114,12 @@ for iev, ev in enumerate(cat_evts) :
 			if len(st) > 1: # Check for data gaps and fill with 0's
 				st.merge(method=1, fill_value=0)
 			sr = st[0].stats.sampling_rate
-			st.remove_response(output="DISP", zero_mean=True, taper=True, taper_fraction=0.05, pre_filt=[0.001, 0.005, sr/3, sr/2], water_level=200)
+            if is_removeresp:
+                # Check whether pressure channel, if so use "VEL" option which doesn't add or remove zeros
+                if st[0].stats.response.instrument_sensitivity.input_units == 'PA':
+                    st.remove_response(output='VEL', zero_mean=True, taper=True, taper_fraction=0.05, pre_filt=[0.001, 0.005, sr/3, sr/2], water_level=200)
+                else:
+                    st.remove_response(output=outunits, zero_mean=True, taper=True, taper_fraction=0.05, pre_filt=[0.001, 0.005, sr/3, sr/2], water_level=200)
 			st.trim(starttime=tbeg, endtime=tend, pad=True, nearest_sample=False, fill_value=0) # make sure correct length
 			st.detrend(type='demean')
 			st.detrend(type='linear')

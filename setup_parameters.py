@@ -20,6 +20,7 @@ sr_new = 1 # Downsample Hz (samples/sec)
 trlen = 6000 # Length of traces (sec)
 comps = []
 comps = ["LHZ", "LH1", "LH2"] #["BHZ", "BH1", "BH2", "BDH"] # Components to download
+outunits = 'DISP' # DISP, VEL, ACC [For pressure channels, should use "VEL"]
 isCMT_params = 1 # Use GCMT parameters for SAC header or default IRIS? (time, lat, lon, depth)
 iscentroid = 1 # if isCMT_params=1, use centroid instead of epicentral?
 search_dir = './' + webservice + '_' + network + '_' + str(minmagnitude) + '/' # OUTPUT PATH
