@@ -58,6 +58,14 @@ fig = inventory.plot(show=False)
 cat_evts.plot(fig=fig)  
 fig.savefig(search_dir+"events.pdf", bbox_inches="tight")
 
+file = open('stations.txt', 'w')
+for ista in range(0,len(inventory[0])) :
+    file.write("%5s %12f %12f %12f\n" % (inventory[0].stations[ista]._code, 
+                                        inventory[0].stations[ista]._latitude, 
+                                        inventory[0].stations[ista]._longitude, 
+                                        inventory[0].stations[ista]._elevation))
+file.close()
+
 
 # %% codecell
 # Get event times
