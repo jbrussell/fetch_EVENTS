@@ -42,3 +42,6 @@ Rcomp = "LHR" # output
 
 ########## 3-CMT2idagrn ##########
 CMT2idagrn_path = search_dir+'CMT2idagrn/' # OUTPUT PATH
+
+########## 4-writeCMTSOLUTION ##########
+CMTSOLUTION_path = search_dir+'CMTSOLUTIONS/' # OUTPUT PATH
