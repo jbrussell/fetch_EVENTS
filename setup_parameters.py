@@ -31,13 +31,13 @@ search_dir = './' + webservice + '_' + network + '_' + str(minmagnitude) + '/' #
 ori_path = '/Users/russell/Lamont/ENAM/DATA/orientations/YO_orientations.txt'
 iscleandir = 0 # Clean directories by removing all BHT, BHR, BHE, and BHN before calculating.
 # Define Naming Conventions
-Zcomp = "LHZ" # input (same as above)
-H1comp = "LH1" # input (same as above)
-H2comp = "LH2" # input (same as above)
-Ncomp = "LHN" # output
-Ecomp = "LHE" # output
-Tcomp = "LHT" # output
-Rcomp = "LHR" # output
+Zcomp = "BHZ" # input (same as above)
+H1comp = "BH1" # input (same as above)
+H2comp = "BH2" # input (same as above)
+Ncomp = "BHN" # output
+Ecomp = "BHE" # output
+Tcomp = "BHT" # output
+Rcomp = "BHR" # output
 
 
 ########## 3-CMT2idagrn ##########
