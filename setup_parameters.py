@@ -18,7 +18,7 @@ tend = "2015-03-29T00:00:00"
 is_downsamp = 1 # Downsample?
 sr_new = 1 # Downsample Hz (samples/sec)
 trlen = 6000 # Length of traces (sec)
-comps = []
+# WARNING! List the full channel names. Do not use wildcards. Bad things will happen...
 comps = ["BHZ", "BH1", "BH2", "BDH"] # Components to download
 is_removeresp = 1 # Remove response?
 outunits = 'DISP' # DISP, VEL, ACC [For pressure channels, should use "VEL"]
