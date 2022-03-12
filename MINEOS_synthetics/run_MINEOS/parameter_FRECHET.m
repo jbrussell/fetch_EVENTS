@@ -46,7 +46,7 @@ param.stationfile = 'stations.stn';
 % Setup idagrn paths
 param.IDAGRN = [path2runMINEOS,'/IDAGRN/'];
 param.EVTPATH = [param.IDAGRN,'EVT_FILES/',param.eventfile];
-param.STAPATH = [param.IDAGRN,'STATION/',param.stationfile];
+% param.STAPATH = [param.IDAGRN,'STATION/',param.stationfile];
 param.SYNTH_OUT = [param.IDAGRN,'SYNTH/',param.CARDID,'_b',num2str(N_modes),'/',param.eventfile,'/'];
 if ~exist(param.SYNTH_OUT)
     mkdir(param.SYNTH_OUT);

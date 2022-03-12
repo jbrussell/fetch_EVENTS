@@ -18,6 +18,8 @@ CARDID = param.CARDID;
 
 STAPATH = param.STAPATH; % input station path
 CMTPATH = param.CMTPATH; % input CMT path
+LENGTH_HR = param.LENGTH_HR;
+DT = param.DT;
 % DATAPATH = '~/BROWN/RESEARCH/PROJ_NoMelt/DATA/EVENTS/fetch_EVENTS/IRIS_ZA_5.5_Zcorr/';
 
 if ( TYPE == 'T') 
