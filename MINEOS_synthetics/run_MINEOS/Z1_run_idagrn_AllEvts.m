@@ -16,8 +16,8 @@ CARDID = param.CARDID;
 % STAPATH = param.STAPATH;
 % SYNTH_OUT = param.SYNTH_OUT;
 
-STAPATH = '../../stations.txt'; % input station path
-CMTPATH = '../../IRIS_ZA_5.5_Zcorr/CMT2idagrn/'; % input CMT path
+STAPATH = param.STAPATH; % input station path
+CMTPATH = param.CMTPATH; % input CMT path
 % DATAPATH = '~/BROWN/RESEARCH/PROJ_NoMelt/DATA/EVENTS/fetch_EVENTS/IRIS_ZA_5.5_Zcorr/';
 
 if ( TYPE == 'T') 
