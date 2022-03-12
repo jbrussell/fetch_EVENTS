@@ -84,3 +84,6 @@ for iev = 1:length(evtpaths)
     end
 
 end
+
+% Create list of event names
+system(['ls ',NEW_SYNTH_OUT,' | grep -vFx evlist.txt > ',NEW_SYNTH_OUT,'/evlist.txt'])
