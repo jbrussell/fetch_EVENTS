@@ -6,7 +6,6 @@
 % JBR 07/18
 clear; close all;
 
-COMP = 'Z'; %'Z' 'R' 'T' % Component
 is_overwrite = 0; % overwrite previous calculations?
 
 parameter_FRECHET;
@@ -16,6 +15,7 @@ CARDID = param.CARDID;
 % STAPATH = param.STAPATH;
 % SYNTH_OUT = param.SYNTH_OUT;
 
+COMP = param.COMP; %'Z' 'R' 'T' % Component
 STAPATH = param.STAPATH; % input station path
 CMTPATH = param.CMTPATH; % input CMT path
 LENGTH_HR = param.LENGTH_HR;
