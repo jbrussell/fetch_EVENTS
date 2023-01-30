@@ -27,7 +27,7 @@ iscentroid = 1 # if isCMT_params=1, use centroid instead of epicentral?
 search_dir = './' + webservice + '_' + network + '_' + str(minmagnitude) + '/' # OUTPUT PATH
 
 ########## 2-rotate_H1H2_NE_RT ##########
-# Read orientations
+# Read H1 orientations relative to North; clockwise positive (only used in 2-rotate-H1H2_NE_RT.py, not needed for 2-rotate_NE_RT.py)
 ori_path = '/Users/russell/Lamont/ENAM/DATA/orientations/YO_orientations.txt'
 iscleandir = 0 # Clean directories by removing all BHT, BHR, BHE, and BHN before calculating.
 # Define Naming Conventions
