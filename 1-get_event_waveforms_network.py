@@ -78,7 +78,7 @@ for iev, ev in enumerate(cat_evts) :
     # determine index of desired origin type
     ior = 0 
     if isCMT_params:
-        for origin in cat_evts[0].origins:
+        for origin in ev.origins:
             if origin.origin_type == ortype:
                 break
             ior = ior + 1
