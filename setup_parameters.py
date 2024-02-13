@@ -3,7 +3,7 @@ minmagnitude = 7.0 #6.5; 7.0; # Lower magnitude cutoff for event search
 webservice = "IRIS"
 network = "YO" # YO ENAM
 
-input_stalist = 1 # 0 if use all stations
+input_stalist = 0 # 0 if use all stations
 if input_stalist: # List of stations
     stalist = '/Users/russell/Lamont/ENAM/DATA/stalist_good.txt'
     text_file = open(stalist, "r")
