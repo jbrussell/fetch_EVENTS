@@ -54,7 +54,7 @@ else: # Read events from IRIS catalogue
 
 # %% codecell
 # LOAD STATIONS
-inventory = client.get_stations(network=network, station=stations, channel=comps[0], starttime=t1, endtime=t2)
+inventory = client.get_stations(network=network, station=stations, channel=','.join(comps), starttime=t1, endtime=t2)
 inventory.plot(projection="local",label=False)
 fig = inventory.plot(show=False) 
 cat_evts.plot(fig=fig)  
