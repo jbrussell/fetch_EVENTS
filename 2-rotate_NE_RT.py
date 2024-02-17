@@ -19,7 +19,7 @@ import os
 data_dir = search_dir
 
 # Read events
-evs = pd.read_csv(data_dir+'/evlist.txt',' ',header=None,skipinitialspace=True)
+evs = pd.read_csv(data_dir+'/evlist.txt',delimiter=' ',header=None,skipinitialspace=True)
 evs.columns = ["event"]
 
 # %% codecell

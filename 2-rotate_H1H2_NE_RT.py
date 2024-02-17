@@ -30,11 +30,11 @@ import os
 data_dir = search_dir
 
 # Read events
-evs = pd.read_csv(data_dir+'/evlist.txt',' ',header=None,skipinitialspace=True)
+evs = pd.read_csv(data_dir+'/evlist.txt',delimiter=' ',header=None,skipinitialspace=True)
 evs.columns = ["event"]
 
 # Orientations
-ori = pd.read_csv(ori_path,' ',header=None,skipinitialspace=True)
+ori = pd.read_csv(ori_path,delimiter=' ',header=None,skipinitialspace=True)
 ori.columns = ["sta", "H1azi"]
 stas = ori['sta']
 ori = ori.set_index('sta')
