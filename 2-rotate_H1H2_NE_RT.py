@@ -56,6 +56,9 @@ for iev, event in enumerate(evs['event']):
             print('Missing data for station: ',str(sta))
             continue
         H1azi = ori.loc[sta]['H1azi']
+
+        print('Rotating '+event+'.*.'+str(sta)+'.*.sac')
+
         for itr in range(0,len(st)):
             if st[itr].stats.channel == H1comp:
                 h1 = st[itr].data

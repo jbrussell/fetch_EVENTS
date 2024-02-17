@@ -37,6 +37,9 @@ for iev, event in enumerate(evs['event']):
         except Exception:
             print('Missing data for station: ',str(sta))
             continue
+
+        print('Rotating '+event+'.*.'+str(sta)+'.*.sac')
+        
         for itr in range(0,len(st)):
             if st[itr].stats.channel == Ncomp:
                 n = st[itr].data
