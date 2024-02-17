@@ -25,6 +25,7 @@ import pandas as pd
 import matplotlib.pylab as plt
 from obspy.io.sac import SACTrace
 import os
+import math
 %matplotlib inline
 # %% codecell
 data_dir = search_dir
@@ -56,6 +57,9 @@ for iev, event in enumerate(evs['event']):
             print('Missing data for station: ',str(sta))
             continue
         H1azi = ori.loc[sta]['H1azi']
+        if math.isnan(H1azi):
+            print('Bad orientation... skipping')
+            continue
 
         print('Rotating '+event+'.*.'+str(sta)+'.*.sac')
 
