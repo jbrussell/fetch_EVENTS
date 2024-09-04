@@ -86,16 +86,16 @@ for iev, event in enumerate(evs['event']):
         t = traces_rt[1]
 
         # Define new data streams
-        st_bhn = st[0].copy()
+        st_bhn = st.select(component="Z")[0].copy()
         st_bhn.stats.channel = Ncomp
         st_bhn.data = n
-        st_bhe = st[0].copy()
+        st_bhe = st.select(component="Z")[0].copy()
         st_bhe.stats.channel = Ecomp
         st_bhe.data = e
-        st_bht = st[0].copy()
+        st_bht = st.select(component="Z")[0].copy()
         st_bht.stats.channel = Tcomp
         st_bht.data = t
-        st_bhr = st[0].copy()
+        st_bhr = st.select(component="Z")[0].copy()
         st_bhr.stats.channel = Rcomp
         st_bhr.data = r
 
