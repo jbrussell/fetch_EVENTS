@@ -99,6 +99,8 @@ for iev, event in enumerate(evs['event']):
         st_bhr.stats.channel = Rcomp
         st_bhr.data = r
 
+        network = st.stats.network
+
         # Remove existing file
         if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac'):
             os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac')
@@ -109,7 +111,6 @@ for iev, event in enumerate(evs['event']):
         if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Rcomp+'.sac'):
             os.remove(evdir + event+'.'+network+'.'+str(sta)+'.'+Rcomp+'.sac')
         
-        network = st_bhr.stats.network
         # Save BHN, BHE, BHR, and BHT
         sac_n = SACTrace.from_obspy_trace(st_bhn)
         sac_n.write(evdir + event+'.'+network+'.'+str(sta)+'.'+Ncomp+'.sac')

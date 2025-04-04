@@ -40,7 +40,10 @@ if isCMT_params==1 :
     url_query = 'http://ds.iris.edu/spudservice/momenttensor/ids?' \
                +'evtstartdate='+t1.strftime('%Y-%m-%dT%H:%M:%S') \
                +'&evtenddate='+t2.strftime('%Y-%m-%dT%H:%M:%S') \
-               +'&evtminmag='+str(minmagnitude)
+               +'&evtminmag='+str(minmagnitude) \
+               +'&evtmaxmag='+str(maxmagnitude) \
+               +'&evtmindepth='+str(mindepth) \
+               +'&evtmaxdepth='+str(maxdepth) 
     evids = urllib.request.urlopen(url_query)
     events_str = '&'.join([line.decode("utf-8").replace("\n", "") for line in evids])+'&'
     url_ndk = 'http://ds.iris.edu/spudservice/momenttensor/bundleids/ndk?'+events_str
@@ -54,7 +57,7 @@ else: # Read events from IRIS catalogue
 
 # %% codecell
 # LOAD STATIONS
-inventory = client.get_stations(network=network, station=stations, channel=','.join(comps), starttime=t1, endtime=t2)
+inventory = client.get_stations(network=','.join(networks), station=stations, channel=','.join(comps), starttime=t1, endtime=t2)
 inventory.plot(projection="local",label=False)
 fig = inventory.plot(show=False) 
 cat_evts.plot(fig=fig)  
