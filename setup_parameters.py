@@ -40,7 +40,7 @@ search_dir = './' + webservice + '_M' + str(minmagnitude) + '_' + str(mindepth) 
 
 ########## 2-rotate_H1H2_NE_RT ##########
 # Read H1 orientations relative to North; clockwise positive (only used in 2-rotate-H1H2_NE_RT.py, not needed for 2-rotate_NE_RT.py)
-ori_path = '/Users/russell/Lamont/ENAM/DATA/orientations/YO_orientations.txt'
+ori_path = '/Users/russell/Lamont/ENAM/DATA/orientations/YO_orientations.txt' # col1: sta name | col2: BH1 deg. CW from north
 iscleandir = 0 # Clean directories by removing all BHT, BHR, BHE, and BHN before calculating.
 # Define Naming Conventions
 Zcomp = "BHZ" # input (same as above)
