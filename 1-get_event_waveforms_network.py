@@ -133,7 +133,7 @@ for iev, ev in enumerate(cat_evts) :
                 if is_removeresp:
                     try:
                         # Check whether pressure channel, if so use "VEL" option which doesn't add or remove zeros
-                        if st[0].stats.response.instrument_sensitivity.input_units == 'PA':
+                        if st[0].stats.response.instrument_sensitivity.input_units.upper() == 'PA':
                             st.remove_response(output='VEL', zero_mean=True, taper=True, taper_fraction=0.05, pre_filt=[0.001, 0.005, sr/3, sr/2], water_level=600)
                         else:
                             st.remove_response(output=outunits, zero_mean=True, taper=True, taper_fraction=0.05, pre_filt=[0.001, 0.005, sr/3, sr/2], water_level=600)
