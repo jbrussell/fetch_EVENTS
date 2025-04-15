@@ -62,7 +62,7 @@ for iev, event in enumerate(evs['event']):
         st_bhr.stats.channel = Rcomp
         st_bhr.data = r
 
-        network = st.stats.network
+        network = st[0].stats.network
 
         # Remove existing file
         if os.path.exists(evdir + event+'.'+network+'.'+str(sta)+'.'+Tcomp+'.sac'):
